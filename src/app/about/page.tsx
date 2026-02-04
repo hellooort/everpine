@@ -98,39 +98,43 @@ export default function AboutPage() {
                   "relative flex items-start group",
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 )}>
-                  {/* 연도 마커 */}
-                  <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-white border-4 border-secondary rounded-full transform -translate-x-1/2 mt-1.5 z-10 group-hover:scale-125 transition-transform duration-300"></div>
+                  {/* 연도 마커 (중앙) */}
+                  <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-white border-4 border-secondary rounded-full transform -translate-x-1/2 mt-[0.35rem] z-20 group-hover:scale-125 transition-transform duration-300"></div>
                   
                   {/* 연도 텍스트 (모바일) */}
-                  <div className="md:hidden absolute left-14 top-0 text-xl font-bold text-secondary">
+                  <div className="md:hidden absolute left-16 top-0 text-xl font-bold text-secondary leading-none">
                     {item.year}
                   </div>
 
-                  {/* 콘텐츠 카드 */}
+                  {/* 콘텐츠 카드 영역 */}
                   <div className={cn(
-                    "ml-14 md:ml-0 md:w-1/2 pt-1",
-                    index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"
+                    "ml-16 md:ml-0 md:w-1/2 pt-8 relative",
+                    index % 2 === 0 ? "md:pr-16 md:text-left" : "md:pl-16 md:text-right"
                   )}>
-                    {/* 연도 텍스트 (데스크탑) */}
-                    <div className={cn(
-                      "hidden md:block text-2xl font-bold text-secondary mb-3",
-                      index % 2 === 0 ? "mr-[-60px]" : "ml-[-60px]"
-                    )}>
-                      {item.year}
-                    </div>
+                    <div className="relative inline-block text-left max-w-full">
+                      {/* 연도 텍스트 (데스크탑) - 박스 상단 모서리에 배치 */}
+                      <div className={cn(
+                        "hidden md:block text-3xl font-bold text-secondary absolute -top-[42px] w-full", // w-full 추가
+                        index % 2 === 0 
+                          ? "left-0 text-right"  // 짝수: 왼쪽 상단, 텍스트 오른쪽 정렬
+                          : "right-0 text-left" // 홀수: 오른쪽 상단, 텍스트 왼쪽 정렬
+                      )}>
+                        {item.year}
+                      </div>
 
-                    <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                      <ul className="space-y-3">
-                        {item.events.map((event, eventIndex) => (
-                          <li key={eventIndex} className={cn(
-                            "flex items-start gap-2 text-gray-600",
-                            index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
-                          )}>
-                            <CheckCircle2 className="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5" />
-                            <span>{event}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.08)] transition-shadow duration-300">
+                        <ul className="space-y-3">
+                          {item.events.map((event, eventIndex) => (
+                            <li key={eventIndex} className={cn(
+                              "flex items-start gap-2 text-gray-600",
+                              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                            )}>
+                              <CheckCircle2 className="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5" />
+                              <span>{event}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </StaggerItem>

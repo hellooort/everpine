@@ -29,6 +29,7 @@ export default function ContactForm() {
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -85,12 +86,30 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
 
-    // 실제로는 여기서 API 호출
-    // 데모용으로 타임아웃 사용
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          inquiryType: formData.inquiryType,
+          message: formData.message,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) {
+        setSubmitError(null);
+        setIsSubmitted(true);
+      } else {
+        setSubmitError(data.message || '문의 접수에 실패했습니다. 다시 시도해주세요.');
+      }
+    } catch {
+      setSubmitError('네트워크 오류가 발생했습니다. 다시 시도해주세요.');
+    }
 
     setIsSubmitting(false);
-    setIsSubmitted(true);
   };
 
   if (isSubmitted) {
@@ -248,6 +267,10 @@ export default function ContactForm() {
           <p className="mt-1 text-sm text-red-500">{errors.message}</p>
         )}
       </div>
+
+      {submitError && (
+        <p className="text-sm text-red-500 bg-red-50 p-3 rounded-lg">{submitError}</p>
+      )}
 
       {/* 개인정보 동의 */}
       <div className="bg-gray-50 p-4 rounded-lg">
