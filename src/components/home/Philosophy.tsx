@@ -1,7 +1,7 @@
 'use client';
 
 import { FadeIn, SlideUp } from '@/components/ui/motion';
-import { Quote, ArrowRight, Sparkles, Brain, Puzzle, MonitorPlay } from 'lucide-react';
+import { Quote, ArrowRight, Sparkles, Brain, Puzzle, MonitorPlay, Heart } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Philosophy() {
@@ -18,7 +18,7 @@ export default function Philosophy() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           {/* 여는 따옴표 아이콘 */}
           <FadeIn>
-            <div className="mb-8 inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary/10 text-secondary">
+            <div className="mb-8 inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent">
               <Quote className="w-8 h-8 fill-current" />
             </div>
           </FadeIn>
@@ -28,9 +28,9 @@ export default function Philosophy() {
             <blockquote className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-8 tracking-tight">
               기술은 전면에 드러나지 않되,
               <br />
-              <span className="text-secondary inline-block mt-2">사용자는 &apos;쉽게&apos;,</span>
+              <span className="text-accent inline-block mt-2">사용자는 &apos;쉽게&apos;,</span>
               <br />
-              <span className="text-secondary inline-block mt-2">보호자는 &apos;신뢰할 수 있게&apos;</span>
+              <span className="text-accent inline-block mt-2">보호자는 &apos;신뢰할 수 있게&apos;</span>
               <br />
               <span className="inline-block mt-2">작동하는 것을 목표로 합니다.</span>
             </blockquote>
@@ -46,7 +46,7 @@ export default function Philosophy() {
           {/* 부가 설명 */}
           <SlideUp delay={0.5}>
             <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-              에버파인은 교육적이되 딱딱하지 않고, 전문적이되 과장하지 않으며,
+              (주)에버파인은 교육적이되 딱딱하지 않고, 전문적이되 과장하지 않으며,
               <br className="hidden md:block" />
               기술 중심이 아닌 <strong className="text-primary font-semibold">사람 중심</strong>의 가치를 추구합니다.
             </p>
@@ -55,10 +55,11 @@ export default function Philosophy() {
           {/* 키워드 태그 */}
           <SlideUp delay={0.6} className="flex flex-wrap justify-center gap-3 mt-12">
             {[
-              { text: 'AR·XR 기술', icon: MonitorPlay },
+              { text: 'XR 기술', icon: MonitorPlay },
               { text: '인지 자극', icon: Brain },
               { text: '놀이 기반', icon: Puzzle },
               { text: '두뇌 활동', icon: Sparkles },
+              { text: '시니어 친화', icon: Heart },
             ].map((tag, idx) => (
               <span
                 key={tag.text}
@@ -81,11 +82,11 @@ export default function Philosophy() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <SlideUp>
             <h3 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
-              에버파인과 함께 <br className="md:hidden" />
+              (주)에버파인과 함께 <br className="md:hidden" />
               <span className="text-secondary-light">인지 건강의 새로운 경험</span>을 시작하세요
             </h3>
             <p className="text-gray-300 mb-10 text-lg font-light">
-              AR·XR 기반 인터랙티브 퍼즐로 어린이와 어르신 모두에게 즐거운 인지 자극을 선사합니다
+              XR 기반 인터랙티브 퍼즐로 어린이와 어르신 모두에게 즐거운 인지 자극을 선사합니다
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

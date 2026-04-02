@@ -32,37 +32,40 @@ export default function HeroSection() {
         <div className="text-center max-w-5xl mx-auto space-y-8">
           {/* 메인 타이틀 */}
           <SlideUp delay={0.2} className="space-y-4">
+            <p className="text-yellow-300 text-lg md:text-xl font-medium tracking-wider">
+              Play, Think, Remember
+            </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              놀이로 <span className="text-secondary-light">기억</span>을 깨우다
+              놀이로 <span className="text-yellow-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">기억</span>을 깨우다
               <br />
-              <span className="text-white">AR로 경험을 확장하다</span>
+              <span className="text-white">XR로 경험을 확장하다</span>
             </h1>
           </SlideUp>
           
           {/* 서브 타이틀 */}
           <SlideUp delay={0.4}>
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed font-light max-w-2xl mx-auto">
-              AR·XR 기술 기반의 인터랙티브 퍼즐로
+              XR 기술 기반의 인지자극 콘텐츠와 솔루션으로
               <br className="hidden md:block" />
-              어린이와 어르신에게 잊지 못할 몰입 경험을 선사합니다
+              어린이와 어르신에게 맞춤형 인지 경험을 제공합니다
             </p>
           </SlideUp>
 
           {/* CTA 버튼 */}
           <SlideUp delay={0.6} className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <Link
-              href="/products"
-              className="group relative px-8 py-4 bg-secondary hover:bg-secondary-light text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-secondary/30 flex items-center justify-center gap-2 overflow-hidden"
+              href="/about"
+              className="group relative px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-yellow-400/30 flex items-center justify-center gap-2 overflow-hidden"
             >
-              <span className="relative z-10">제품 둘러보기</span>
+              <span className="relative z-10">회사 소개</span>
               <ArrowRight className="w-5 h-5 relative z-10 transition-transform group-hover:translate-x-1" />
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+              <div className="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
             </Link>
             <Link
-              href="/about"
-              className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white font-semibold rounded-full transition-all duration-300 flex items-center justify-center"
+              href="/products"
+              className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-yellow-400/50 hover:bg-yellow-400/20 text-white font-semibold rounded-full transition-all duration-300 flex items-center justify-center"
             >
-              회사 소개
+              제품 둘러보기
             </Link>
           </SlideUp>
         </div>

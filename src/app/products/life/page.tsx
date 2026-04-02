@@ -4,17 +4,17 @@ import ProductCard from '@/components/products/ProductCard';
 import { getProductsByCategory } from '@/data/products';
 
 export const metadata: Metadata = {
-  title: '어르신 퍼즐 | 에버파인',
-  description: '에버파인의 어르신 인지 자극 퍼즐을 만나보세요. 인지 저하 예방과 두뇌 활동 유지를 위한 퍼즐입니다.',
+  title: '에버파인 라이프 | (주)에버파인',
+  description: '(주)에버파인의 시니어 인지케어 솔루션을 만나보세요. CST 기반 인지자극 콘텐츠로 인지 저하 예방과 두뇌 활동 유지를 돕습니다.',
 };
 
-export default function SeniorProductsPage() {
-  const seniorProducts = getProductsByCategory('senior');
+export default function LifeProductsPage() {
+  const lifeProducts = getProductsByCategory('life');
 
   return (
     <div className="min-h-screen">
       {/* 페이지 헤더 */}
-      <section className="bg-gradient-to-r from-purple-500 to-purple-700 py-20">
+      <section className="bg-gradient-to-r from-purple-500 to-purple-700 pt-40 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* 브레드크럼 */}
           <nav className="flex items-center gap-2 text-sm text-purple-200 mb-6">
@@ -22,18 +22,18 @@ export default function SeniorProductsPage() {
             <span>/</span>
             <Link href="/products" className="hover:text-white transition-colors">제품소개</Link>
             <span>/</span>
-            <span className="text-white font-medium">어르신 퍼즐</span>
+            <span className="text-white font-medium">에버파인 라이프</span>
           </nav>
           
           <div className="flex items-center gap-4 mb-4">
             <span className="px-4 py-1 bg-white/20 text-white text-sm font-semibold rounded-full">
-              어르신용
+              Senior
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">어르신 퍼즐</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">에버파인 라이프</h1>
           <p className="text-lg text-purple-100 max-w-2xl">
             인지 저하 예방과 두뇌 활동 유지를 목적으로 한 
-            퍼즐 기반 인지 자극 콘텐츠입니다. 
+            CST 기반 인지자극 콘텐츠입니다. 
             요양보호사와 함께 진행하기에 최적화되어 있습니다.
           </p>
         </div>
@@ -44,22 +44,22 @@ export default function SeniorProductsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-primary mb-2">전체 제품</h2>
-            <p className="text-gray-600">{seniorProducts.length}개의 제품이 있습니다</p>
+            <p className="text-gray-600">{lifeProducts.length}개의 제품이 있습니다</p>
           </div>
 
           {/* 제품 그리드 - 1줄 4개 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {seniorProducts.map((product) => (
+            {lifeProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* 어르신 퍼즐 특징 */}
+      {/* 에버파인 라이프 특징 */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-primary mb-12 text-center">어르신 퍼즐의 특징</h2>
+          <h2 className="text-3xl font-bold text-primary mb-12 text-center">시니어 제품의 특징</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-8 shadow-md text-center">
@@ -68,7 +68,7 @@ export default function SeniorProductsPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">인지 자극 설계</h3>
+              <h3 className="text-xl font-bold text-primary mb-3">CST 기반 인지 자극</h3>
               <p className="text-gray-600">
                 기억력·주의력·판단력·반응 인지를 자극하는 구조로 설계되어 
                 두뇌 활동을 활성화합니다.
@@ -83,7 +83,7 @@ export default function SeniorProductsPage() {
               </div>
               <h3 className="text-xl font-bold text-primary mb-3">현장 친화적</h3>
               <p className="text-gray-600">
-                요양보호사가 &quot;아버님, 이렇게 하시면 됩니다&quot; 형태로 
+                요양보호사가 &quot;어르신, 이렇게 하시면 됩니다&quot; 형태로 
                 직접 시연하며 진행하기 쉬운 사용성을 제공합니다.
               </p>
             </div>
@@ -91,13 +91,13 @@ export default function SeniorProductsPage() {
             <div className="bg-white rounded-xl p-8 shadow-md text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">체크리스트 연동</h3>
+              <h3 className="text-xl font-bold text-primary mb-3">AI 안내 영상</h3>
               <p className="text-gray-600">
-                본인용·보호자용 체크리스트를 통해 
-                인지 상태를 확인하고 관찰할 수 있습니다.
+                AI 기반 안내 영상으로 누구나 쉽게 
+                인지활동 프로그램을 진행할 수 있습니다.
               </p>
             </div>
           </div>

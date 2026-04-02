@@ -5,7 +5,7 @@ import Philosophy from "@/components/home/Philosophy";
 export default function Home() {
   return (
     <div className="-mt-20">
-      {/* 히어로 섹션 - AR 영상 배경 + 문구 */}
+      {/* 히어로 섹션 - 영상 배경 + 문구 */}
       <HeroSection />
       
       {/* 파트너사 무한 스크롤 */}

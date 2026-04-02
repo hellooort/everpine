@@ -15,12 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "에버파인 | AR·XR 인지 퍼즐 전문 기업",
-  description: "AR·XR 기술을 기반으로 어린이와 어르신의 기억과 인지를 놀이로 자극하는 인터랙티브 퍼즐 콘텐츠 전문 기업입니다.",
-  keywords: ["에버파인", "AR", "XR", "퍼즐", "인지", "어린이 퍼즐", "어르신 퍼즐", "기억력"],
+  title: "(주)에버파인 | XR·AI 인지 솔루션 전문 기업",
+  description: "XR 기술을 기반으로 어린이와 어르신의 기억과 인지를 놀이로 자극하는 인터랙티브 퍼즐 콘텐츠 전문 기업입니다.",
+  keywords: ["에버파인", "XR", "AI", "퍼즐", "인지", "어린이 퍼즐", "어르신 퍼즐", "기억력", "인지자극"],
   openGraph: {
-    title: "에버파인 | AR·XR 인지 퍼즐 전문 기업",
-    description: "AR·XR 기술을 기반으로 어린이와 어르신의 기억과 인지를 놀이로 자극하는 인터랙티브 퍼즐 콘텐츠 전문 기업입니다.",
+    title: "(주)에버파인 | XR·AI 인지 솔루션 전문 기업",
+    description: "XR 기술을 기반으로 어린이와 어르신의 기억과 인지를 놀이로 자극하는 인터랙티브 퍼즐 콘텐츠 전문 기업입니다.",
     type: "website",
     locale: "ko_KR",
   },
@@ -37,7 +37,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <main className="pt-20 min-h-screen">
+        <main className="min-h-screen">
           {children}
         </main>
         <Footer />

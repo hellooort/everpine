@@ -1,21 +1,30 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navigation = [
   { name: '메인', href: '/' },
   { name: '회사소개', href: '/about' },
+  { name: '캐릭터 IP', href: '/ip' },
   { name: '제품소개', href: '/products' },
   { name: '문의하기', href: '/contact' },
   { name: '스토어', href: 'https://smartstore.naver.com', external: true },
 ];
 
+const lightBackgroundPages = ['/ip'];
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  
+  const isLightBackground = lightBackgroundPages.some(page => pathname.startsWith(page));
+  const showScrolledStyle = scrolled || isLightBackground;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +38,7 @@ export default function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
+        showScrolledStyle
           ? "bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-200/50 py-2"
           : "bg-transparent py-4"
       )}
@@ -37,20 +46,22 @@ export default function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* 로고 */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-xl shadow-lg transition-transform group-hover:scale-105 group-hover:rotate-3">
-              <span className="text-white font-bold text-lg">EP</span>
-            </div>
-            <span className={cn(
-              "text-2xl font-bold transition-colors",
-              scrolled ? "text-primary" : "text-white"
-            )}>
-              에버파인
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/images/logo.png"
+              alt="EverPine"
+              width={160}
+              height={40}
+              className={cn(
+                "h-10 w-auto transition-all group-hover:scale-105",
+                showScrolledStyle ? "" : "brightness-0 invert"
+              )}
+              priority
+            />
           </Link>
 
           {/* 데스크탑 네비게이션 */}
-          <div className="hidden md:flex md:items-center md:gap-8">
+          <div className="hidden md:flex md:items-center md:gap-10">
             {navigation.map((item) => (
               item.external ? (
                 <a
@@ -59,20 +70,20 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    "flex items-center gap-1 text-sm font-medium transition-all hover:-translate-y-0.5",
-                    scrolled ? "text-gray-700 hover:text-primary" : "text-gray-200 hover:text-white"
+                    "flex items-center gap-1 text-base font-medium transition-all hover:-translate-y-0.5",
+                    showScrolledStyle ? "text-gray-700 hover:text-primary" : "text-gray-200 hover:text-white"
                   )}
                 >
                   {item.name}
-                  <ExternalLink className="w-3 h-3" />
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               ) : (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-sm font-medium transition-all hover:-translate-y-0.5",
-                    scrolled ? "text-gray-700 hover:text-primary" : "text-gray-200 hover:text-white"
+                    "text-base font-medium transition-all hover:-translate-y-0.5",
+                    showScrolledStyle ? "text-gray-700 hover:text-primary" : "text-gray-200 hover:text-white"
                   )}
                 >
                   {item.name}
@@ -86,7 +97,7 @@ export default function Header() {
             type="button"
             className={cn(
               "md:hidden p-2 rounded-lg transition-colors",
-              scrolled ? "text-gray-700 hover:bg-gray-100" : "text-white hover:bg-white/10"
+              showScrolledStyle ? "text-gray-700 hover:bg-gray-100" : "text-white hover:bg-white/10"
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >

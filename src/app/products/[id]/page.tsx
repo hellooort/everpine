@@ -19,12 +19,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   if (!product) {
     return {
-      title: '제품을 찾을 수 없습니다 | 에버파인',
+      title: '제품을 찾을 수 없습니다 | (주)에버파인',
     };
   }
 
   return {
-    title: `${product.name} | 에버파인`,
+    title: `${product.name} | (주)에버파인`,
     description: product.shortDescription,
   };
 }
@@ -91,7 +91,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                       : 'bg-purple-100 text-purple-700'
                   }`}
                 >
-                  {product.category === 'kids' ? '어린이용' : '어르신용'}
+                  {product.category === 'study' ? 'Kids' : 'Senior'}
                 </span>
 
                 {/* 제품명 */}
@@ -103,13 +103,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 <p className="text-lg text-gray-600 mb-6">
                   {product.shortDescription}
                 </p>
-
-                {/* 가격 */}
-                {product.price && (
-                  <p className="text-2xl font-bold text-secondary mb-8">
-                    {product.price}
-                  </p>
-                )}
 
                 {/* 구매 버튼 */}
                 <div className="flex gap-4 mb-8">

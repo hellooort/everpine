@@ -1,15 +1,17 @@
 'use client';
 
-// 파트너사 목록 (샘플 데이터)
+import Image from 'next/image';
+
+// 파트너사 목록
 const partners = [
-  { name: '서울시교육청', logo: '/images/partners/partner1.svg' },
-  { name: '보건복지부', logo: '/images/partners/partner2.svg' },
-  { name: '대한치매학회', logo: '/images/partners/partner3.svg' },
-  { name: '아동발달연구소', logo: '/images/partners/partner4.svg' },
-  { name: '스마트러닝협회', logo: '/images/partners/partner5.svg' },
-  { name: '요양시설협회', logo: '/images/partners/partner6.svg' },
-  { name: '한국AR협회', logo: '/images/partners/partner7.svg' },
-  { name: 'XR콘텐츠협회', logo: '/images/partners/partner8.svg' },
+  { name: '서울시교육청', logo: '/mainlogo/서울시교육청.png' },
+  { name: '보건복지부', logo: '/mainlogo/보건복지부.png' },
+  { name: '대한치매학회', logo: '/mainlogo/대한치매학회.png' },
+  { name: '아동발달연구소', logo: '/mainlogo/아동발달연구소.png' },
+  { name: '스마트러닝협회', logo: '/mainlogo/스마트러닝협회.png' },
+  { name: '요양시설협회', logo: '/mainlogo/요양시설협회.png' },
+  { name: '한국XR협회', logo: '' },  // 로고 없음
+  { name: 'XR콘텐츠협회', logo: '' },  // 로고 없음
 ];
 
 export default function PartnersMarquee() {
@@ -20,7 +22,7 @@ export default function PartnersMarquee() {
           함께하는 파트너
         </h2>
         <p className="text-gray-600 text-center">
-          에버파인과 함께 인지 건강을 위해 노력하는 파트너사입니다
+          (주)에버파인과 함께 인지 건강을 위해 노력하는 파트너사입니다
         </p>
       </div>
 
@@ -31,27 +33,50 @@ export default function PartnersMarquee() {
           {partners.map((partner, index) => (
             <div
               key={`first-${index}`}
-              className="flex-shrink-0 mx-8 flex flex-col items-center justify-center"
+              className="flex-shrink-0 mx-10 flex flex-col items-center justify-center"
             >
-              <div className="w-32 h-20 bg-gray-100 rounded-lg flex items-center justify-center p-4 hover:bg-gray-200 transition-colors">
-                {/* 로고 이미지가 없을 경우 텍스트로 표시 */}
-                <span className="text-sm font-medium text-gray-600 text-center">
-                  {partner.name}
-                </span>
-              </div>
+              {partner.logo ? (
+                <div className="w-60 h-32 flex items-center justify-center">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={240}
+                    height={120}
+                    className="object-contain"
+                  />
+                </div>
+              ) : (
+                <div className="w-60 h-32 bg-gray-50 rounded-lg flex items-center justify-center p-4 hover:bg-gray-100 transition-colors">
+                  <span className="text-sm font-medium text-gray-500 text-center">
+                    {partner.name}
+                  </span>
+                </div>
+              )}
             </div>
           ))}
           {/* 두 번째 세트 (무한 스크롤을 위한 복제) */}
           {partners.map((partner, index) => (
             <div
               key={`second-${index}`}
-              className="flex-shrink-0 mx-8 flex flex-col items-center justify-center"
+              className="flex-shrink-0 mx-10 flex flex-col items-center justify-center"
             >
-              <div className="w-32 h-20 bg-gray-100 rounded-lg flex items-center justify-center p-4 hover:bg-gray-200 transition-colors">
-                <span className="text-sm font-medium text-gray-600 text-center">
-                  {partner.name}
-                </span>
-              </div>
+              {partner.logo ? (
+                <div className="w-60 h-32 flex items-center justify-center">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={240}
+                    height={120}
+                    className="object-contain"
+                  />
+                </div>
+              ) : (
+                <div className="w-60 h-32 bg-gray-50 rounded-lg flex items-center justify-center p-4 hover:bg-gray-100 transition-colors">
+                  <span className="text-sm font-medium text-gray-500 text-center">
+                    {partner.name}
+                  </span>
+                </div>
+              )}
             </div>
           ))}
         </div>

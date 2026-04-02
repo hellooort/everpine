@@ -5,9 +5,9 @@
   --foreground: #333333;
   --primary: #2d3e50;
   --primary-light: #3d5166;
-  --secondary: #6b9b9b;
-  --secondary-light: #7eb3b3;
-  --accent: #5a8a8a;
+  --secondary: #facc15;
+  --secondary-light: #fde047;
+  --accent: #eab308;
 }
 
 @theme inline {

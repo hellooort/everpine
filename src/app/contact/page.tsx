@@ -2,15 +2,15 @@ import { Metadata } from 'next';
 import ContactForm from '@/components/contact/ContactForm';
 
 export const metadata: Metadata = {
-  title: '문의하기 | 에버파인',
-  description: '에버파인에 대한 문의사항을 남겨주세요. 빠른 시일 내에 답변 드리겠습니다.',
+  title: '문의하기 | (주)에버파인',
+  description: '(주)에버파인에 대한 문의사항을 남겨주세요. 빠른 시일 내에 답변 드리겠습니다.',
 };
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* 페이지 헤더 */}
-      <section className="bg-primary py-20">
+      <section className="bg-primary pt-40 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">문의하기</h1>
           <p className="text-lg text-gray-300">
@@ -101,8 +101,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-primary">주소</h3>
-                    <p className="text-gray-600">서울특별시 강남구 테헤란로 123</p>
-                    <p className="text-sm text-gray-500">에버파인 빌딩 5층</p>
+                    <p className="text-gray-600">대전광역시 대덕구 한남로 70, 한남대학교</p>
+                    <p className="text-sm text-gray-500">캠퍼스혁신파크 산학연혁신허브 A동 401호</p>
                   </div>
                 </div>
               </div>
@@ -116,15 +116,15 @@ export default function ContactPage() {
                 </p>
                 <ul className="text-sm text-gray-600 space-y-2">
                   <li className="flex items-center gap-2">
-                    <span className="text-secondary">Q.</span>
+                    <span className="text-accent font-semibold">Q.</span>
                     제품 배송은 얼마나 걸리나요?
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-secondary">Q.</span>
-                    AR 앱은 어디서 다운로드하나요?
+                    <span className="text-accent font-semibold">Q.</span>
+                    XR 앱은 어디서 다운로드하나요?
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-secondary">Q.</span>
+                    <span className="text-accent font-semibold">Q.</span>
                     단체 구매 할인이 있나요?
                   </li>
                 </ul>
