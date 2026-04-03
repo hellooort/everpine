@@ -51,22 +51,15 @@ export default function IPPage() {
       {/* 히어로 섹션 - 전체 너비 */}
       <section className="relative">
         {/* 이미지 */}
-        <div className="relative w-full md:overflow-hidden">
+        <div className="relative w-full overflow-hidden">
           <Image
             src="/협회 이미지 go.png"
             alt="에버파인 캐릭터들"
             width={1920}
             height={800}
-            className="w-full h-auto object-cover brightness-75 md:brightness-75"
-            style={{ marginTop: '0' }}
+            className="w-full h-auto object-cover brightness-75 md:-mt-[35%]"
             priority
           />
-          {/* PC에서만 이미지 위치 조절용 - CSS로 처리 */}
-          <style jsx>{`
-            @media (min-width: 768px) {
-              img { margin-top: -35% !important; }
-            }
-          `}</style>
           {/* 어두운 오버레이 */}
           <div className="absolute inset-0 bg-black/40" />
         </div>
