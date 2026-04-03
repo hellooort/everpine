@@ -47,7 +47,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-primary">전화</h3>
-                    <p className="text-gray-600">02-1234-5678</p>
+                    <p className="text-gray-600">070-8870-1431</p>
                     <p className="text-sm text-gray-500">평일 09:00 - 18:00</p>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-primary">이메일</h3>
-                    <p className="text-gray-600">contact@everpine.co.kr</p>
+                    <p className="text-gray-600">wind2015@everpine.kr</p>
                     <p className="text-sm text-gray-500">24시간 접수 가능</p>
                   </div>
                 </div>
