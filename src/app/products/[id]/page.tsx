@@ -86,8 +86,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 {/* 카테고리 뱃지 */}
                 <span
                   className={`inline-block px-3 py-1 text-sm font-semibold rounded-full mb-4 ${
-                    product.category === 'kids'
-                      ? 'bg-blue-100 text-blue-700'
+                    product.category === 'study'
+                      ? 'bg-green-100 text-green-700'
                       : 'bg-purple-100 text-purple-700'
                   }`}
                 >
