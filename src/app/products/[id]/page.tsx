@@ -162,8 +162,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
             </p>
 
             {/* 카테고리별 추가 정보 */}
-            {product.category === 'kids' && (
-              <div className="mt-12 p-6 bg-blue-50 rounded-xl">
+            {product.category === 'study' && (
+              <div className="mt-12 p-6 bg-green-50 rounded-xl">
                 <h3 className="font-semibold text-primary mb-4">
                   학습 효과
                 </h3>
@@ -181,7 +181,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
               </div>
             )}
 
-            {product.category === 'senior' && (
+            {product.category === 'life' && (
               <div className="mt-12 p-6 bg-purple-50 rounded-xl">
                 <h3 className="font-semibold text-primary mb-4">
                   인지 자극 영역
