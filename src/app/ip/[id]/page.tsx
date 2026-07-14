@@ -20,10 +20,16 @@ const ipDatabase = {
     target: ['20~30대 직장인', '감성 콘텐츠 소비층', '힐링 콘텐츠 선호 사용자'],
     keywords: ['공감', '위로', '일상', '직장 라이프'],
     characters: [
-      { name: '핑하(Pingha) 주임', description: '성실하고 따뜻한 성격으로 팀의 중심이 되는 캐릭터. 작은 배려와 긍정적인 태도로 주변을 변화시킴' },
-      { name: '필로(Peelo) 대표', description: '강한 책임감과 추진력을 가진 리더. 조직을 이끄는 중심 역할' },
-      { name: '프로포(Froppo) 인턴', description: '실수는 많지만 밝고 긍정적인 에너지의 소유자. 성장형 캐릭터' },
-      { name: '나비(Naby) 팀장', description: '차분하고 신뢰감 있는 매니저. 조직의 균형을 잡는 역할' },
+      { name: '핑하(Pingha) 주임', image: '/images/ip/pingha/pingha-1.png', description: '성실하고 따뜻한 성격으로 팀의 중심이 되는 캐릭터. 작은 배려와 긍정적인 태도로 주변을 변화시킴' },
+      { name: '필로(Peelo) 대표', image: '/images/ip/pingha/peelo-1.png', description: '강한 책임감과 추진력을 가진 리더. 조직을 이끄는 중심 역할' },
+      { name: '프로포(Froppo) 인턴', image: '/images/ip/pingha/froppo-1.png', description: '실수는 많지만 밝고 긍정적인 에너지의 소유자. 성장형 캐릭터' },
+      { name: '나비(Naby) 팀장', image: '/images/ip/pingha/naby-1.png', description: '차분하고 신뢰감 있는 매니저. 조직의 균형을 잡는 역할' },
+    ],
+    gallery: [
+      ...[2, 3, 4, 5].map((n) => ({ src: `/images/ip/pingha/pingha-${n}.png`, alt: `핑하 ${n}` })),
+      ...[2, 3, 4, 5].map((n) => ({ src: `/images/ip/pingha/peelo-${n}.png`, alt: `필로 ${n}` })),
+      ...[2, 3, 4, 5].map((n) => ({ src: `/images/ip/pingha/froppo-${n}.png`, alt: `프로포 ${n}` })),
+      ...[2, 3, 4, 5].map((n) => ({ src: `/images/ip/pingha/naby-${n}.png`, alt: `나비 ${n}` })),
     ],
     icon: Heart,
   },
@@ -39,9 +45,14 @@ const ipDatabase = {
     target: ['10~20대', 'SNS 및 숏폼 콘텐츠 소비층', '밈(Meme) 문화 선호층'],
     keywords: ['유머', '병맛', 'B급 감성', '트렌디'],
     characters: [
-      { name: '징어(Jingeo)', description: '스타일을 중요하게 생각하는 장난꾸러기 캐릭터. 항상 재미있는 일을 찾고 즐김' },
-      { name: '쭈꾸(Jjukku)', description: '꼼꼼하면서도 독특한 사고를 가진 캐릭터. 반전 매력을 보유' },
-      { name: '옥토(Okto)', description: '단순하고 자유로운 성격으로 유쾌한 상황을 만들어내는 캐릭터' },
+      { name: '징어(Jingeo)', image: '/images/ip/jingeo/jingeo-1.png', description: '스타일을 중요하게 생각하는 장난꾸러기 캐릭터. 항상 재미있는 일을 찾고 즐김' },
+      { name: '쭈꾸(Jjukku)', image: '/images/ip/jingeo/jjukku-1.png', description: '꼼꼼하면서도 독특한 사고를 가진 캐릭터. 반전 매력을 보유' },
+      { name: '옥토(Okto)', image: '/images/ip/jingeo/okto-1.png', description: '단순하고 자유로운 성격으로 유쾌한 상황을 만들어내는 캐릭터' },
+    ],
+    gallery: [
+      ...[2, 3, 4].map((n) => ({ src: `/images/ip/jingeo/jingeo-${n}.png`, alt: `징어 ${n}` })),
+      ...[2, 3, 4].map((n) => ({ src: `/images/ip/jingeo/jjukku-${n}.png`, alt: `쭈꾸 ${n}` })),
+      ...[2, 3, 4].map((n) => ({ src: `/images/ip/jingeo/okto-${n}.png`, alt: `옥토 ${n}` })),
     ],
     icon: Smile,
   },
@@ -57,20 +68,21 @@ const ipDatabase = {
     target: ['유아 ~ 초등학생', '부모 및 교육 시장', '키즈 콘텐츠 소비층'],
     keywords: ['사랑', '협력', '성장', '교육', '모험'],
     characters: [
-      { name: '티티 (Ti-Ti)', species: '티라노사우루스', description: '호기심이 많고 장난기 넘치는 중심 캐릭터. 새로운 것에 먼저 도전하며 이야기의 시작을 이끕니다.' },
-      { name: '롱기 (Longie)', species: '브라키오사우루스', description: '다정하고 든든한 큰형 같은 캐릭터. 친구들을 챙기며 안정감을 주는 역할을 합니다.' },
-      { name: '스피디 (Speedy)', species: '갈리미무스', description: '빠르고 똑똑한 판단력을 가진 캐릭터. 문제가 생기면 가장 먼저 해결 방법을 찾아냅니다.' },
-      { name: '코코 (Co-Co)', species: '트리케라톱스', description: '책임감이 강하고 친구를 먼저 생각하는 캐릭터. 위기 상황에서 앞장서는 용기를 가지고 있습니다.' },
-      { name: '플랫 (Flat)', species: '스피노사우루스', description: '모험과 새로운 경험을 좋아하는 캐릭터. 두려움보다 기대가 앞서는 성격입니다.' },
-      { name: '파라 (Para)', species: '파라사우롤로푸스', description: '음악과 감정으로 마음을 표현하는 캐릭터. 친구들의 감정을 섬세하게 이해합니다.' },
-      { name: '돈 (Don)', species: '디메트로돈', description: '마을의 기억과 지혜를 가진 캐릭터. 느긋하고 안정적인 분위기를 만듭니다.' },
-      { name: '푸티 (Pooty)', species: '프테라노돈', description: '자유롭게 하늘을 날며 소식을 전하는 캐릭터. 밝고 활발한 에너지를 가지고 있습니다.' },
-      { name: '핀핀 (PinPin)', species: '스테고사우루스', description: '차분하고 다정한 보호자형 캐릭터. 친구들의 감정을 부드럽게 다독여줍니다.' },
-      { name: '벨로 (Velo)', species: '벨로시랩터', description: '빠르고 활발한 행동력의 캐릭터. 생각보다 행동이 먼저인 직선적인 성격입니다.' },
-      { name: '알루 (Alu)', species: '오비랩터', description: '섬세한 감각을 가진 예술가 캐릭터. 아름다움과 표현을 중요하게 생각합니다.' },
-      { name: '포포 (Po-Po)', species: '딜로포사우루스', description: '감정 표현이 솔직하고 풍부한 캐릭터. 기분에 따라 행동이 달라지는 매력을 가집니다.' },
-      { name: '쿵쿵 (KoongKoong)', species: '안킬로사우루스', description: '느긋하고 여유로운 평화주의자 캐릭터. 항상 편안한 분위기를 만들어냅니다.' },
+      { name: '티티 (Ti-Ti)', species: '티라노사우루스', image: '/images/ip/lovedino/titi.png', description: '호기심이 많고 장난기 넘치는 중심 캐릭터. 새로운 것에 먼저 도전하며 이야기의 시작을 이끕니다.' },
+      { name: '롱기 (Longie)', species: '브라키오사우루스', image: '/images/ip/lovedino/longie.png', description: '다정하고 든든한 큰형 같은 캐릭터. 친구들을 챙기며 안정감을 주는 역할을 합니다.' },
+      { name: '스피디 (Speedy)', species: '갈리미무스', image: '/images/ip/lovedino/speedy.png', description: '빠르고 똑똑한 판단력을 가진 캐릭터. 문제가 생기면 가장 먼저 해결 방법을 찾아냅니다.' },
+      { name: '코코 (Co-Co)', species: '트리케라톱스', image: '/images/ip/lovedino/coco.png', description: '책임감이 강하고 친구를 먼저 생각하는 캐릭터. 위기 상황에서 앞장서는 용기를 가지고 있습니다.' },
+      { name: '플랫 (Flat)', species: '스피노사우루스', image: '/images/ip/lovedino/flat.png', description: '모험과 새로운 경험을 좋아하는 캐릭터. 두려움보다 기대가 앞서는 성격입니다.' },
+      { name: '파라 (Para)', species: '파라사우롤로푸스', image: '/images/ip/lovedino/para.png', description: '음악과 감정으로 마음을 표현하는 캐릭터. 친구들의 감정을 섬세하게 이해합니다.' },
+      { name: '돈 (Don)', species: '디메트로돈', image: '/images/ip/lovedino/don.png', description: '마을의 기억과 지혜를 가진 캐릭터. 느긋하고 안정적인 분위기를 만듭니다.' },
+      { name: '푸티 (Pooty)', species: '프테라노돈', image: '/images/ip/lovedino/pooty.png', description: '자유롭게 하늘을 날며 소식을 전하는 캐릭터. 밝고 활발한 에너지를 가지고 있습니다.' },
+      { name: '핀핀 (PinPin)', species: '스테고사우루스', image: '/images/ip/lovedino/pinpin.png', description: '차분하고 다정한 보호자형 캐릭터. 친구들의 감정을 부드럽게 다독여줍니다.' },
+      { name: '벨로 (Velo)', species: '벨로시랩터', image: '/images/ip/lovedino/velo.png', description: '빠르고 활발한 행동력의 캐릭터. 생각보다 행동이 먼저인 직선적인 성격입니다.' },
+      { name: '알루 (Alu)', species: '오비랩터', image: '/images/ip/lovedino/alu.png', description: '섬세한 감각을 가진 예술가 캐릭터. 아름다움과 표현을 중요하게 생각합니다.' },
+      { name: '포포 (Po-Po)', species: '딜로포사우루스', image: '/images/ip/lovedino/popo.png', description: '감정 표현이 솔직하고 풍부한 캐릭터. 기분에 따라 행동이 달라지는 매력을 가집니다.' },
+      { name: '쿵쿵 (KoongKoong)', species: '안킬로사우루스', image: '/images/ip/lovedino/koongkoong.png', description: '느긋하고 여유로운 평화주의자 캐릭터. 항상 편안한 분위기를 만들어냅니다.' },
     ],
+    gallery: [],
     icon: Sparkles,
   },
 };
@@ -212,8 +224,17 @@ export default function IPDetailPage() {
               <StaggerItem key={idx}>
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow"
+                  className="h-full bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow"
                 >
+                  <div className="relative w-full h-44 mb-5">
+                    <Image
+                      src={char.image}
+                      alt={char.name}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
                   <h4 className="text-lg font-bold text-gray-900 mb-1">
                     {char.name}
                   </h4>
@@ -231,6 +252,41 @@ export default function IPDetailPage() {
           </StaggerContainer>
         </div>
       </section>
+
+      {/* 캐릭터 갤러리 */}
+      {ip.gallery.length > 0 && (
+        <section className="pb-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SlideUp>
+              <h2 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+                <span className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <IconComponent className="w-5 h-5 text-primary" />
+                </span>
+                캐릭터 갤러리
+              </h2>
+            </SlideUp>
+
+            <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+              {ip.gallery.map((img, idx) => (
+                <StaggerItem key={idx}>
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="relative aspect-square bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow"
+                  >
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-contain p-5"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </motion.div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-16 bg-gray-50">

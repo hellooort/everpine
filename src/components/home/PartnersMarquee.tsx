@@ -10,6 +10,16 @@ const partners = [
   { name: '아동발달연구소', logo: '/mainlogo/아동발달연구소.png' },
   { name: '스마트러닝협회', logo: '/mainlogo/스마트러닝협회.png' },
   { name: '요양시설협회', logo: '/mainlogo/요양시설협회.png' },
+  { name: 'OBS', logo: '/mainlogo/obs.png' },
+  { name: '파주장단콩웰빙마루', logo: '/mainlogo/paju-jangdankong.png' },
+  { name: '엘씨에스파트너스', logo: '/mainlogo/lcsp.png' },
+  { name: '메가한강금융', logo: '/mainlogo/mh-finance.png' },
+  { name: '태린메드', logo: '/mainlogo/taeryn-med.png' },
+  { name: '서동가정의학과의원', logo: '/mainlogo/sedong-clinic.png' },
+  { name: '이엔피솔루션', logo: '/mainlogo/enp-solution.png' },
+  { name: '페이보넥스코리아', logo: '/mainlogo/favonex.png' },
+  { name: '페이젠 유니코아', logo: '/mainlogo/payzen.png' },
+  { name: '호텔 리벤시아 & 풀빌라', logo: '/mainlogo/libentia.png' },
   { name: '한국XR협회', logo: '' },  // 로고 없음
   { name: 'XR콘텐츠협회', logo: '' },  // 로고 없음
 ];
